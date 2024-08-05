@@ -6,8 +6,8 @@ Algorithm to Linear Search
 LINEAR-SEARCH[ARRAY, N, ITEM,LOC]
 
 1. Start
-2. Set LOC = 0
-3. Set ARRAY[N] = ITEM
+2. Set LOC = 1
+3. Set ARRAY[N+1] = ITEM
 4. Repeat step 5 while ARRAY[LOC] != ITEM
 5.      Set LOC = LOC + 1
          End of Step 4 Loop

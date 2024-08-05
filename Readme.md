@@ -4,3 +4,4 @@
 3. [Delete an element from an array](./delete.cpp)
 4. [Linear Search an element in an array](./linearSearch.cpp)
 5. [Binary Search an element in an array](./binarySearch.cpp)
+6. [Bubble Sort an array](./bubbleSort.cpp)

@@ -1,3 +1,20 @@
+// C++ code to implement Linear Search
+
+/*
+Algorithm to Linear Search
+
+LINEAR-SEARCH[ARRAY, N, ITEM,LOC]
+
+1. Start
+2. Set LOC = 0
+3. Set ARRAY[N] = ITEM
+4. Repeat step 5 while ARRAY[LOC] != ITEM
+5.      Set LOC = LOC + 1
+         End of Step 4 Loop
+6. If LOC = N+1 then set LOC = 0
+7. Exit
+*/
+
 #include<iostream>
 using namespace std;
 
@@ -8,7 +25,7 @@ void LinearSearch(int array[],int n,int item, int loc){
         loc = loc+1;
     }
     if(loc == n){
-        loc = 0;
+        loc = -1;
         cout<<"The element is not found in the array"<<endl;
     }
     else{

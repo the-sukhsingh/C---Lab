@@ -1,5 +1,19 @@
 // C++ program to Delete an element in an Array
 
+/*
+Algorithm to Delete an element in an Array
+
+DELETE[ARRAY, N, K, ITEM]
+
+1. Start
+2. Set ITEM = ARRAY[K]
+3. Repeat step 4 for J = K to N-1
+4.      Set ARRAY[J] = ARRAY[J+1]
+        End of Step 3 Loop
+5. Set N = N - 1
+6. Exit
+*/
+
 #include<iostream>
 using namespace std;
 

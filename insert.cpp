@@ -1,5 +1,21 @@
 // C++ program to Insert an element in an Array
 
+/*
+Algorithm to Insert an element in an Array
+INSERT[ARRAY, N, K, ITEM]
+
+1. Start
+2. Set J = N
+3. Repeat step 4 and 5 while J >= K
+4.      Set ARRAY[J+1] = ARRAY[J]
+5.      Set J = J - 1
+        End of Step 3 Loop
+6. Set ARRAY[K] = ITEM
+7. Set N = N + 1
+8. Exit
+
+*/
+
 #include<iostream>
 using namespace std;
 

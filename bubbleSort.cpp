@@ -50,6 +50,15 @@ void BubbleSort(int Array[],int N)
             }
             PTR = PTR + 1;
         }
+        // for (int PTR = 0; PTR < N-k; PTR++)
+        // {
+        //     if (Array[PTR] > Array[PTR + 1])
+        //     {
+        //         temp = Array[PTR];
+        //         Array[PTR] = Array[PTR + 1];
+        //         Array[PTR + 1] = temp;
+        //     }
+        // }
     }
     display(Array,N);
 }

@@ -36,7 +36,7 @@ void LinearSearch(int array[],int n,int item, int loc){
 }
 
 int main(){
-    int loc;
+    int loc = 0;
     int array[10] = {12,5,1,48,18,1544,45,35,45,95};
     LinearSearch(array,10,1544,loc);
     return 0;

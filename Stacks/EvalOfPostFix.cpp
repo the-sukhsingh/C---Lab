@@ -110,7 +110,8 @@ void EvalPost(string arr[], int stack[], int &top)
 
 int main()
 {
-    string arr[10] = {"5", "6", "2", "+", "*", "12", "4", "/", "-", ")"};
+    string arr[10] = {"5", "6", "2", "+", "*", "12", "4", "/", "-"};
+    arr[9] = ")";
     int stack[45];
     int top = -1;
     EvalPost(arr,stack,top);

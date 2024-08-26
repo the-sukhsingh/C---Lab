@@ -14,3 +14,9 @@
 1. [Push an element in a stack](./Stacks/push.cpp)
 2. [Pop an element from a stack](./Stacks/pop.cpp)
 3. [Evaluation of Postfix expression](./Stacks/EvalOfPostFix.cpp)
+
+
+## C++
+
+1. [Scientific Calculator](./Cpp/ScientificCalc.cpp)
+2. [Factorial of 10 numbers](./Cpp//FactorialTen.cpp)

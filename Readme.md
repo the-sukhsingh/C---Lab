@@ -14,6 +14,7 @@
 1. [Push an element in a stack](./Stacks/push.cpp)
 2. [Pop an element from a stack](./Stacks/pop.cpp)
 3. [Evaluation of Postfix expression](./Stacks/EvalOfPostFix.cpp)
+4. [Conversion of Infix to Postfix expression](./Stacks/Infix-To-Postfix.cpp)
 
 
 ## C++

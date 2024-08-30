@@ -18,7 +18,7 @@ POP(STACK, TOP, ITEM)
 using namespace std;
 void display(int array[], int n){
     cout << "The array is" << endl;
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i <= n; i++){
         cout << array[i] << " ";
     }
     cout << endl;
@@ -31,7 +31,7 @@ void Pop(int Stack[],int& Top, int& ITEM)
         cout<<"Underflow"<<endl;
     }
     else{
-        ITEM = Stack[Top - 1];
+        ITEM = Stack[Top];
         Top = Top - 1;
     }
     
@@ -39,7 +39,7 @@ void Pop(int Stack[],int& Top, int& ITEM)
 
 int main(){
     int array[5] = {2, 4,8,64};
-    int top = 4;
+    int top = 3;
     int Item = 0;
     Pop(array,top,Item);
     display(array,top);

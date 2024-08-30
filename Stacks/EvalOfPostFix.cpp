@@ -18,11 +18,10 @@ Algorithm for Evaluation of Postfix Expression
 
 
 */
-
 #include <iostream>
 using namespace std;
 
-int StrToInt(string str)
+int StrToInt(string str) // Convert string to integer
 {
     int num = 0;
     for (char c : str)
@@ -32,7 +31,7 @@ int StrToInt(string str)
     return num;
 }
 
-void traverse(int array[], int n)
+void traverse(int array[], int n) // Print the array
 {
     cout << "The array is" << endl;
     for (int i = 0; i < n; i++)
@@ -41,13 +40,13 @@ void traverse(int array[], int n)
     }
 }
 
-void Push(int Array[], int& top, int Item)
+void Push(int Array[], int& top, int Item) // Push an item onto the stack
 {
     top = top + 1;
     Array[top] = Item;
 }
 
-int Pop(int Stack[], int &Top)
+int Pop(int Stack[], int &Top) // Pop an item from the stack
 {
     int ITEM;
     if (Top == -1)
@@ -63,41 +62,41 @@ int Pop(int Stack[], int &Top)
     }
 }
 
-void EvalPost(string arr[], int stack[], int &top)
+void EvalPost(string arr[], int stack[], int &top) // Evaluate the postfix expression
 {
     int i = 0;
     while (arr[i] != ")")
     {
-        if ((arr[i] == "+") | (arr[i] == "-") | (arr[i] == "*") | (arr[i] == "/"))
+        if ((arr[i] == "+") | (arr[i] == "-") | (arr[i] == "*") | (arr[i] == "/")) // If operator is encountered
         {
-            int a = Pop(stack, top);
-            int b = Pop(stack, top);
-            if (arr[i] == "+")
+            int a = Pop(stack, top); // Pop the top element
+            int b = Pop(stack, top); // Pop the next to top element
+            if (arr[i] == "+") // Addition
             {
                 int val = b+a;
-                Push(stack, top, val);
+                Push(stack, top, val); // Push the result back onto the stack
             }
-            if (arr[i] == "-")
+            if (arr[i] == "-") // Subtraction
             {
                 int val = b-a;
-                Push(stack, top, val);
+                Push(stack, top, val); // Push the result back onto the stack
             }
-            if (arr[i] == "*")
+            if (arr[i] == "*") // Multiplication
             {
                 int val = b*a;
-                Push(stack, top, val);
+                Push(stack, top, val); // Push the result back onto the stack
             }
-            if (arr[i] == "/")
+            if (arr[i] == "/") // Division
             {
                 int val = b/a;
-                Push(stack, top, val);
+                Push(stack, top, val); // Push the result back onto the stack
             }
         }
-        else
+        else // If operand is encountered
         {
             string str = arr[i];
-            int val = StrToInt(str);
-            Push(stack, top, val);
+            int val = StrToInt(str); // Convert the string to integer
+            Push(stack, top, val); // Push the operand onto the stack
         }
         i = i + 1;
     }
@@ -105,12 +104,12 @@ void EvalPost(string arr[], int stack[], int &top)
 
 int main()
 {
-    string arr[10] = {"5", "6", "2", "+", "*", "12", "4", "/", "-"};
-    arr[9] = ")";
-    int stack[45];
-    int top = -1;
-    EvalPost(arr,stack,top);
-    int val = stack[0];
+    string arr[10] = {"5", "6", "2", "+", "*", "12", "4", "/", "-"}; // Postfix expression
+    arr[9] = ")"; // Add sentinel
+    int stack[45]; // Stack to store intermediate results
+    int top = -1; // Top of the stack
+    EvalPost(arr,stack,top); // Evaluate the postfix expression
+    int val = stack[0]; // Get the final result from the stack
     cout<<"The value of the expression is \n";
     cout<<val;
 

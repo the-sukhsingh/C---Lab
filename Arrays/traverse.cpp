@@ -12,23 +12,21 @@ Algrorithm to Traverse an Array
 
 */
 
-
-
 #include<iostream>
 using namespace std;
 
-void traverse(int array[],int n){
-    cout<<"The array is"<<endl;
-    for (int i = 0; i < n; i++)
-    {
-        cout<<array[i]<<" ";
+// Function to traverse and print the array
+void traverse(int array[], int n) {
+    cout << "The array is" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << array[i] << " ";
     }
 }
 
-int main(){
+int main() {
     int n;
-    int array[10] = {12,5,1,48,18,1544,45,35,45,95};
+    int array[10] = {12, 5, 1, 48, 18, 1544, 45, 35, 45, 95};
     n = 10;
-    traverse(array,n);
+    traverse(array, n); // Call the traverse function
     return 0;
 }

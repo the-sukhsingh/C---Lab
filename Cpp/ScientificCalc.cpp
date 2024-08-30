@@ -41,16 +41,29 @@ float Basic ::div(float x, float y)
 class Scientific : public Basic
 {
 private:
-    float c, d;
+    float c;
+    float d = 0;
     char oprtr;
 
 public:
-    void calculate(float, char, float);
-    void enterData();
+    void calculate();
     Scientific()
     {
-        enterData();
-        calculate(c, oprtr, d);
+        cout << "Which Calculation Do you want to do:" << endl
+             << "1 for Addition\n2 for Subtraction\n3 for Multiplication\n4 for Division\n5 for Power\n6 for Square\n7 for Exponential\n8 for Factorial" << endl;
+        cin >> oprtr;
+        if ((oprtr == '6') || (oprtr == '7') || (oprtr == '8'))
+        {
+            cout << "Enter number" << endl;
+            cin >> c;
+        }
+        else
+        {
+            cout << "Enter First Number:" << endl;
+            cin >> c;
+            cout << "Enter Second Number:" << endl;
+            cin >> d;
+        }
     }
 
     float powr(float, int);
@@ -95,75 +108,71 @@ int Scientific::factorial(int x)
     return fact;
 }
 
-void Scientific::enterData()
+void Scientific::calculate()
 {
-   while(true)
-    {
-
+    float x = c;
+    float y = d;
+    char op = oprtr;
     
-    cout << "Which Calculation Do you want to do:" << endl
-         << "1 for Addition\n2 for Subtraction\n3 for Multiplication\n4 for Division\n5 for Power\n6 for Square\n7 for Exponential\n8 for Factorial" << endl;
-    cin >> oprtr;
-    if ((oprtr == '6') || (oprtr == '7') || (oprtr == '8'))
+    switch (op)
     {
-        cout << "Enter number" << endl;
-        cin >> c;
-    calculate(c,oprtr,0);
-    }
-    else
-    {
-        cout << "Enter First Number:" << endl;
-        cin >> c;
-        cout << "Enter Second Number:" << endl;
-        cin >> d;
-        calculate(c,oprtr,d);
-    }
+        case '1':
+            cout << x << " + " << y << " = " << add(x, y) << endl;
+            break;
+        case '2':
+            if (x > y)
+            {
+                cout << x << " - " << y << " = " << sub(x, y) << endl;
+            }
+            else
+            {
+                cout << x << " - " << y << " = -" << sub(y, x) << endl;
+            }
+            break;
+        case '3':
+            cout << x << " * " << y << " = " << mul(x, y) << endl;
+            break;
+        case '4':
+            if(y>0)
+                cout << x << " / " << y << " = " << div(x, y) << endl;
+            else
+                cout << "Division by zero is not possible" << endl;
+            break;
+        case '5':
+            cout << x << " ** " << y << " = " << powr(x, y) << endl;
+            break;
+        case '6':
+            if(x<0)
+                cout << "Square of a negative number is not possible" << endl;
+            else
+                cout << x << " ^ 2 " << " = " << square(x) << endl;
+            break;
+        case '7':
+            if(x<0)
+                cout << "Exponential of a negative number is not possible" << endl;
+            else
+                cout << "e ^ " << x << " = " << expo(x) << endl;
+            break;
+        case '8':
+            if(x<0)
+                cout << "Factorial of a negative number is not possible" << endl;
+            else
+                cout << x << "! = " << factorial(x) << endl;
+            break;
+        default:
+            cout << "Invalid operator" << endl;
+            break;
     }
 }
 
-void Scientific::calculate(float x, char op, float y = 0)
-{
-    if (op == '1')
-    {
-        cout << x << " + " << y << " = " << add(x, y) << endl;
-    }
-    else if (op == '2')
-    {
-        if(x>y){
-        cout << x << " - " << y << " = " << sub(x, y) << endl;
-        }
-        else{
-        cout << x << " - " << y << " = -" << sub(y,x) << endl;
-        }
-    }
-    else if (op == '3')
-    {
-        cout << x << " * " << y << " = " << mul(x, y) << endl;
-    }
-    else if (op == '4')
-    {
-        cout << x << " / " << y << " = " << div(x, y) << endl;
-    }
-    else if (op == '5')
-    {
-        cout << x << " ** " << y << " = " << powr(x, y) << endl;
-    }
-    else if (op == '6')
-    {
-        cout << x << " ^ 2 " << " = " << square(x) << endl;
-    }
-    else if (op == '7')
-    {
-        cout << "e ^ " << x << " = " << expo(x) << endl;
-    }
-    else if (op == '8')
-    {
-        cout << x << "! = " << factorial(x) << endl;
-    }
-}
 
 int main()
 {
-    Scientific s1;
+    while (true)
+    {
+        Scientific o1;
+        o1.calculate();
+    }
+    
     return 0;
 }

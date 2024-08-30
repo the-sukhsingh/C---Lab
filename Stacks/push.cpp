@@ -31,13 +31,13 @@ void Push(int Array[], int& top, int MaxStk, int Item){
     }
     else{
         top = top + 1;
-        Array[top-1] = Item;
+        Array[top] = Item;
     }
 }
 
 int main(){
     int array[5] = {2, 4};
-    int top = 2;
+    int top = 1;
     int MaxStk = 4;
     int Item = 45;
     Push(array, top, MaxStk, Item);

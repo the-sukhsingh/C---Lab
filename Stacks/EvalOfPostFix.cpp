@@ -41,7 +41,7 @@ void traverse(int array[], int n)
     }
 }
 
-void Push(int Array[], int top, int Item)
+void Push(int Array[], int& top, int Item)
 {
     top = top + 1;
     Array[top] = Item;
@@ -76,25 +76,21 @@ void EvalPost(string arr[], int stack[], int &top)
             {
                 int val = b+a;
                 Push(stack, top, val);
-                top = top + 1;
             }
             if (arr[i] == "-")
             {
                 int val = b-a;
                 Push(stack, top, val);
-                top = top + 1;
             }
             if (arr[i] == "*")
             {
                 int val = b*a;
                 Push(stack, top, val);
-                top = top + 1;
             }
             if (arr[i] == "/")
             {
                 int val = b/a;
                 Push(stack, top, val);
-                top = top + 1;
             }
         }
         else
@@ -102,7 +98,6 @@ void EvalPost(string arr[], int stack[], int &top)
             string str = arr[i];
             int val = StrToInt(str);
             Push(stack, top, val);
-            top = top + 1;
         }
         i = i + 1;
     }

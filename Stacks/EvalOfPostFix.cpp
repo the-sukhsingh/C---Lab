@@ -19,6 +19,7 @@ Algorithm for Evaluation of Postfix Expression
 
 */
 #include <iostream>
+#include <string>
 using namespace std;
 
 int StrToInt(string str) // Convert string to integer
@@ -31,16 +32,7 @@ int StrToInt(string str) // Convert string to integer
     return num;
 }
 
-void traverse(int array[], int n) // Print the array
-{
-    cout << "The array is" << endl;
-    for (int i = 0; i < n; i++)
-    {
-        cout << array[i] << " ";
-    }
-}
-
-void Push(int Array[], int& top, int Item) // Push an item onto the stack
+void Push(int Array[], int &top, int Item) // Push an item onto the stack
 {
     top = top + 1;
     Array[top] = Item;
@@ -71,24 +63,24 @@ void EvalPost(string arr[], int stack[], int &top) // Evaluate the postfix expre
         {
             int a = Pop(stack, top); // Pop the top element
             int b = Pop(stack, top); // Pop the next to top element
-            if (arr[i] == "+") // Addition
+            if (arr[i] == "+")       // Addition
             {
-                int val = b+a;
+                int val = b + a;
                 Push(stack, top, val); // Push the result back onto the stack
             }
             if (arr[i] == "-") // Subtraction
             {
-                int val = b-a;
+                int val = b - a;
                 Push(stack, top, val); // Push the result back onto the stack
             }
             if (arr[i] == "*") // Multiplication
             {
-                int val = b*a;
+                int val = b * a;
                 Push(stack, top, val); // Push the result back onto the stack
             }
             if (arr[i] == "/") // Division
             {
-                int val = b/a;
+                int val = b / a;
                 Push(stack, top, val); // Push the result back onto the stack
             }
         }
@@ -96,7 +88,7 @@ void EvalPost(string arr[], int stack[], int &top) // Evaluate the postfix expre
         {
             string str = arr[i];
             int val = StrToInt(str); // Convert the string to integer
-            Push(stack, top, val); // Push the operand onto the stack
+            Push(stack, top, val);   // Push the operand onto the stack
         }
         i = i + 1;
     }
@@ -104,14 +96,23 @@ void EvalPost(string arr[], int stack[], int &top) // Evaluate the postfix expre
 
 int main()
 {
-    string arr[10] = {"5", "6", "2", "+", "*", "12", "4", "/", "-"}; // Postfix expression
-    arr[9] = ")"; // Add sentinel
-    int stack[45]; // Stack to store intermediate results
-    int top = -1; // Top of the stack
-    EvalPost(arr,stack,top); // Evaluate the postfix expression
-    int val = stack[0]; // Get the final result from the stack
-    cout<<"The value of the expression is \n";
-    cout<<val;
+    int n;
+    string postfix;
+    cout << "Enter the no. of terms in the postfix expression\n";
+    cin >> n;
+    string arr[n + 1];
+    cout << "Enter the terms of the postfix expression separated with spaces" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    arr[n] = ")";              // Add sentinel
+    int stack[n];              // Stack to store intermediate results
+    int top = -1;              // Top of the stack
+    EvalPost(arr, stack, top); // Evaluate the postfix expression
+    int val = stack[0];        // Get the final result from the stack
+    cout << "The value of the expression is \n";
+    cout << val;
 
     return 0;
 }

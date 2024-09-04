@@ -18,6 +18,14 @@ LINEAR-SEARCH[ARRAY, N, ITEM,LOC]
 #include<iostream>
 using namespace std;
 
+void display(int array[],int n){
+    cout<<"The array is"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout<<array[i]<<" ";
+    }
+}
+
 void LinearSearch(int array[],int n,int item, int loc){
     array[n] = item;
     loc = 0;
@@ -36,8 +44,23 @@ void LinearSearch(int array[],int n,int item, int loc){
 }
 
 int main(){
+    int n;
+    int item;
+    
+    cout<<"Enter the size of array"<<endl;
+    cin>>n;
+    
+    int array[n];
+    cout<<"Enter the values of array"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>array[i];
+    }
     int loc = 0;
-    int array[10] = {12,5,1,48,18,1544,45,35,45,95};
-    LinearSearch(array,10,1544,loc);
+    display(array,n);
+    cout<<endl<<"Enter the item you want to search"<<endl;
+    cin>>item;
+
+    LinearSearch(array,n,item,loc);
     return 0;
 }

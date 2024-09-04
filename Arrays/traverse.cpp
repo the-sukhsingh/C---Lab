@@ -7,7 +7,7 @@ Algrorithm to Traverse an Array
 3. Repeat step 4 & 5 while k < n
 4. Print array[k]
 5. Set k = k + 1
-   End of Step 3 Loop
+   [End of Step 3 Loop]
 6. Exit
 
 */

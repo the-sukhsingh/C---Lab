@@ -16,7 +16,7 @@ POLISH(Q,P)
     (b) Push X onto the STACK.
     [End of if structure]
 7. If a right paranthesis is encountered, then:
-    (a) Repeatdly pop from STACK and add to P each operator (on the top of the STACK) 
+    (a) Repeatdly pop from STACK and add to P each operator (on the top of the STACK)
         until a left paranthesis is encountered.
     (b) Pop the left paranthesis from the STACK.
     [End of if structure]
@@ -39,7 +39,6 @@ void Push(string Array[], int &top, char Item)
 // Function to convert infix expression to postfix expression
 void cal(string s, string p, string stack[], int &top)
 {
-    int count = 0;
     Push(stack, top, '('); // Push '(' onto the stack
     s = s + ")";           // Append ')' to the end of the infix expression
     int len = s.length();
@@ -47,7 +46,6 @@ void cal(string s, string p, string stack[], int &top)
     {
         if ((s[i] == '+') || (s[i] == '-') || (s[i] == '*') || (s[i] == '/') || (s[i] == '^'))
         {
-            count = 0;
             p = p + " "; // Add a space to separate operators and operands in the postfix expression
             if ((s[i] == '+') || (s[i] == '-'))
             {
@@ -91,7 +89,6 @@ void cal(string s, string p, string stack[], int &top)
         }
         else if (s[i] == ')')
         {
-            count = 0;
             p = p + " "; // Add a space to separate operators and operands in the postfix expression
             while (stack[top] != "(")
             {
@@ -102,14 +99,12 @@ void cal(string s, string p, string stack[], int &top)
         }
         else if (s[i] == '(')
         {
-            count = 0;
             p = p + " ";            // Add a space to separate operators and operands in the postfix expression
             Push(stack, top, s[i]); // Push '(' onto the stack
         }
         else
         {
             p = p + s[i]; // Append the operand to the postfix expression
-            count = count + 1;
         }
     }
     cout << "Postfix expression is: " << p << endl;

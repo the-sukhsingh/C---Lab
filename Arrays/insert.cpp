@@ -29,10 +29,6 @@ void display(int array[],int n){
 
 void insert(int arr[],int n, int k, int item) {
     int j=n;
-    // for (int j = n; j >= k-1; j--)
-    // {
-    //     array[j+1] = array[j];
-    // }
     while (j>=k-1)
     {
         arr[j+1]=arr[j];

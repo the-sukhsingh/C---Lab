@@ -17,7 +17,7 @@ POP(STACK, TOP, ITEM)
 #include<iostream>
 using namespace std;
 void display(int array[], int n){
-    cout << "The array is" << endl;
+    cout << "The Stack is" << endl;
     for (int i = 0; i <= n; i++){
         cout << array[i] << " ";
     }
@@ -38,11 +38,23 @@ void Pop(int Stack[],int& Top, int& ITEM)
 }
 
 int main(){
-    int array[5] = {2, 4,8,64};
-    int top = 3;
-    int Item = 0;
-    Pop(array,top,Item);
-    display(array,top);
-    cout<<Item<<endl;
+    int n;
+    cout << "Enter the size of stack:";
+    cin >> n;
+    int array[n];
+    int top = -1;
+    cout << "Enter the elements of the stack" << endl;
+    for (int i = 0; i < n; i++){
+        cin >> array[i];
+        top++;
+    }
+    
+    int Item;
+    display(array, top);
+    for (int i = 0; i < n + 1; i++){
+        cout << "Poping element from stack" << endl;
+        Pop(array, top, Item);
+        display(array, top);
+    }
     return 0;
 }

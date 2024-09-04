@@ -26,11 +26,11 @@ int PTR;
 int N;
 int temp;
 void display(int array[],int n){
-    cout<<"The sorted array is"<<endl;
     for (int i = 0; i < n; i++)
     {
         cout<<array[i]<<" ";
     }
+    cout<<endl;
 }
 
 void BubbleSort(int Array[],int N)
@@ -60,12 +60,25 @@ void BubbleSort(int Array[],int N)
         //     }
         // }
     }
-    display(Array,N);
 }
 
 int main(){
-    int Array[8] = {45,5,7,9,3,49,2,1};
-    N = 8;
-    BubbleSort(Array,N);
+    int n;
+    
+    cout<<"Enter the size of array"<<endl;
+    cin>>n;
+    
+    int array[n];
+
+    cout<<"Enter the values of array"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>array[i];
+    }
+    cout<<"The given Array is"<<endl;
+    display(array,n);
+    cout<<"The sorted array is"<<endl;
+    BubbleSort(array,n);
+    display(array,n);
     return 0;
 }

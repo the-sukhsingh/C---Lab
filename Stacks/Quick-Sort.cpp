@@ -75,7 +75,6 @@ using namespace std;
 
 // Function to display the array
 void display(int array[], int n) {
-    cout << "The array is" << endl;
     for (int i = 0; i < n; i++) {
         cout << array[i] << " ";
     }
@@ -149,13 +148,23 @@ void quickSort(int array[], int n, int& LOC, int lower[], int upper[]) {
 }
 
 int main() {
-    int arry[10] = {4, 8, 1, 56, 48, 25, 65, 89, 45, 59};
-    int lower[10];
-    int upper[10];
+    int n;
+    cout<<"Enter the size of the array\n";
+    cin>>n;
+    int array[n];
+    cout<<"Enter the elements of the array\n";
+    for (int i = 0; i < n; i++)
+    {
+        cin>>array[i];
+    }
+    int lower[n];
+    int upper[n];
     int LOC = 0;
-    display(arry, 10);
-    quickSort(arry, 10, LOC, lower, upper);
-    display(arry, 10);
+    cout<<"The array is\n";
+    display(array, n);
+    quickSort(array, n, LOC, lower, upper);
+    cout<<"The sorted array is\n";
+    display(array, n);
 
     return 0;
 }

@@ -14,33 +14,48 @@ PUSH(STACK, TOP, MAXSTK, ITEM)
 4. EXIT
 */
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-void display(int array[], int n){
-    cout << "The array is" << endl;
-    for (int i = 0; i <= n; i++){
+void display(int array[], int n)
+{
+    cout << "The Stack is" << endl;
+    for (int i = 0; i <= n; i++)
+    {
         cout << array[i] << " ";
     }
     cout << endl;
 }
 
-void Push(int Array[], int& top, int MaxStk, int Item){
-    if (top == MaxStk){
+void Push(int Array[], int &top, int MaxStk, int Item)
+{
+    if (top == MaxStk)
+    {
         cout << "OverFlow" << endl;
     }
-    else{
+    else
+    {
         top = top + 1;
         Array[top] = Item;
     }
 }
 
-int main(){
-    int array[5] = {2, 4};
-    int top = 1;
-    int MaxStk = 4;
-    int Item = 45;
-    Push(array, top, MaxStk, Item);
-    display(array, top);
-    return 0;
+
+int main()
+{
+    int n;
+    cout << "Enter the size of stack:";
+    cin >> n;
+    int array[n];
+    int top = -1;
+    int MaxStk = n-1;
+    int Item;
+    for (int i = 0; i < n + 1; i++)
+    {
+        cout << "Enter element to push:";
+        cin >> Item;
+        Push(array, top, MaxStk, Item);
+        display(array, top);
+    }
+    
 }

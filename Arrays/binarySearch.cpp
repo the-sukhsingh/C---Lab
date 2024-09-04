@@ -25,6 +25,14 @@ BINARY[Array,LB,UB,ITEM,LOC]
 #include<iostream>
 using namespace std;
 
+void display(int array[],int n){
+    cout<<"The array is"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout<<array[i]<<" ";
+    }
+}
+
 void Binary_Search(int Array[],int LB, int UB, int ITEM, int LOC){
     int BEG = LB;
     int END = UB;
@@ -43,20 +51,33 @@ void Binary_Search(int Array[],int LB, int UB, int ITEM, int LOC){
     if (Array[MID] == ITEM)
     {
         LOC = MID+1;
-        cout<<"The ITEM Found at location "<<LOC<<endl;
+        cout<<"The Item Found at location "<<LOC<<endl;
     }
     else{
         LOC = -1;
-        cout<<"The ITEM not found in the given Array"<<endl;
+        cout<<"The Item not found in the given Array"<<endl;
     }
 
     
 }
 
 int main(){
-    int Array[10] = {2,4,6,8,10,12,14,16,18,20};
-    int ITEM = 15;
+    int n;
+    int item;
+    
+    cout<<"Enter the size of array"<<endl;
+    cin>>n;
+    
+    int array[n];
+    cout<<"Enter the values of array"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>array[i];
+    }
+    display(array,n);
+    cout<<endl<<"Enter the item you want to search"<<endl;
+    cin>>item;
     int LOC = 0;
-    Binary_Search(Array,0,10,ITEM,LOC);
+    Binary_Search(array,0,n,item,LOC);
     return 0;
 }

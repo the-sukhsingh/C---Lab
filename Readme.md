@@ -15,6 +15,8 @@
 2. [Pop an element from a stack](./Stacks/pop.cpp)
 3. [Evaluation of Postfix expression](./Stacks/EvalOfPostFix.cpp)
 4. [Conversion of Infix to Postfix expression](./Stacks/Infix-To-Postfix.cpp)
+5. [Quick Sort using stack](./Stacks/Quick-Sort.cpp)
+6. [Tower of Hanoi using stack](./Stacks/Tower-Of-Hanoi.cpp)
 
 
 ## C++

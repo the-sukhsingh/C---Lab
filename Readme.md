@@ -18,6 +18,9 @@
 5. [Quick Sort using stack](./Stacks/Quick-Sort.cpp)
 6. [Tower of Hanoi using stack](./Stacks/Tower-Of-Hanoi.cpp)
 
+### Queues
+
+1. [Queues Simple Operations](./Queues/queue.cpp)
 
 ## C++
 

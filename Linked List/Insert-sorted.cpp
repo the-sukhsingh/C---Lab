@@ -23,14 +23,21 @@ void insert(node*& start, int item)
     node* NEW = new node;
     NEW->info=item;
     node* ptr = start;
+    node* prevptr = start;
     while ((ptr != NULL) && (ptr->info <= item))
     {
+        prevptr = ptr;
         ptr = ptr->link;
     }
-
-        NEW->link = ptr->link;
-        ptr->link = NEW;    
-    
+    if (prevptr != start)
+    {
+        NEW->link = prevptr->link;
+        prevptr->link = NEW;    
+    }
+    else{
+        NEW->link = start;
+        start = NEW;
+    }
 }
 
 
@@ -46,6 +53,9 @@ int main()
     n3.link = NULL;
     node* start = &n1;
     traverse(start);
+    insert(start, 12);
+    insert(start, 52);
+    insert(start, 51);
     insert(start, 85);
     traverse(start);
     return 0;

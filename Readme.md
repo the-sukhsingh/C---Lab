@@ -22,6 +22,14 @@
 
 1. [Queues Simple Operations](./Queues/queue.cpp)
 
+### Linked List
+1. [Linkded List Traverse](./Linked-List/Traverse.cpp)
+2. [Linked List Insert at Beginning](./Linked-List/Insert-first.cpp)
+3. [Linked List Insert after a node](./Linked-List/Insert-after-node.cpp)
+4. [Linked List Insert in a sorted list](./Linked-List/Insert-sorted.cpp)
+5. [Linked List Search an element](./Linked-List/Search.cpp)
+6. [Linked List Search in a sorted list](./Linked-List/Search-sorted.cpp)
+
 ## C++
 
 1. [Scientific Calculator](./Cpp/ScientificCalc.cpp)

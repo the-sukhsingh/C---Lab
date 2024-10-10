@@ -9,12 +9,14 @@ typedef struct node
 
 void traverse(node* start)
 {
+    cout<<"The link list is ... ";
     node* ptr = start;
     while (ptr != NULL)
     {
-        cout << ptr->info << endl;
+        cout << ptr->info << " ";
         ptr = ptr->link;
     }
+    cout<<endl;
 }
 
 

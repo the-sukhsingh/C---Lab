@@ -36,6 +36,6 @@ int main(){
     n3.info = 55;
     n3.link = NULL;
     node* start = &n1;
-    search(start,55);
+    search(start,50);
     return 0;
 }

@@ -89,6 +89,7 @@ int main(){
     node* avail = &a1;
 
     del(start,avail,15);
+    del(start,avail,50);
     traverse(start);
     return 0;
 }

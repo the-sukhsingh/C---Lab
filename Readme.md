@@ -34,3 +34,9 @@
 
 1. [Scientific Calculator](./Cpp/ScientificCalc.cpp)
 2. [Factorial of 10 numbers](./Cpp//FactorialTen.cpp)
+3. [Constructor and Destructor](./Cpp/constructor.cpp)
+4. [Function Overloading](./Cpp/fxnoverloading.cpp)
+5. [Sum of Natural Numbers](./Cpp/sumofnatural.cpp)
+6. [Friend Function](./Cpp/Friendfxns.cpp)
+7. [Friend Class](./Cpp/FriendClass.cpp)
+8. [Inline Function](./Cpp/Inlinefxns.cpp)

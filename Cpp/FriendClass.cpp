@@ -35,3 +35,8 @@ int main() {
 
     return 0;
 }
+
+/*
+Output:
+Value in ClassA: 10
+*/

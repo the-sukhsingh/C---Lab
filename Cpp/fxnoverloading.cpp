@@ -1,6 +1,5 @@
 // write a program with the help of class to show the concept of fn overloading.
 #include <iostream>
-#include <string>
 using namespace std;
 
 class PaymentProcessor
@@ -10,14 +9,15 @@ public:
     {
         cout << "Processing cash payment of $" << amount << endl;
     }
+    void processPayment(int a1,int a2)
+    {
+        cout << "Processing cash payment of $" << a1+a2 << endl;
+    }
     void processPayment(float amount)
     {
         cout << "Processing credit card payment of $" << amount << endl;
     }
-    void processPayment(string accountNumber)
-    {
-        cout << "Processing bank transfer to account: " << accountNumber << endl;
-    }
+
 };
 
 int main()
@@ -25,7 +25,7 @@ int main()
     PaymentProcessor processor;
     processor.processPayment(100); // Cash payment
     processor.processPayment(150.75f); // Credit card payment
-    processor.processPayment("123456789"); // Bank transfer
+    processor.processPayment(50,100); // Cash payment
     return 0;
 }
 
@@ -33,6 +33,6 @@ int main()
 Output:
 Processing cash payment of $100
 Processing credit card payment of $150.75
-Processing bank transfer to account: 123456789
+Processing cash payment of $150
 
 */

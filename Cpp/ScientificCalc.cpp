@@ -176,3 +176,23 @@ int main()
     
     return 0;
 }
+
+/*
+Output:
+Which Calculation Do you want to do:
+1 for Addition
+2 for Subtraction
+3 for Multiplication
+4 for Division
+5 for Power
+6 for Square
+7 for Exponential
+8 for Factorial
+1
+Enter First Number:
+10
+Enter Second Number:
+20
+10 + 20 = 30
+
+*/

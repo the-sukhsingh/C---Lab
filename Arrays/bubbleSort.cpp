@@ -35,13 +35,13 @@ void display(int array[],int n){
 
 void BubbleSort(int Array[],int N)
 {
-    for (int k = 0; k < N; k++)
+    for (int k = 0; k < N-2; k++)
     {
 
         PTR = 0;
-        while (PTR <= N-k)
+        while (PTR < N-k-1)
         {
-            
+            cout<<Array[PTR]<<" "<<Array[PTR + 1]<<" ";
             if (Array[PTR] > Array[PTR + 1])
             {
                 temp = Array[PTR];
@@ -79,6 +79,7 @@ int main(){
     display(array,n);
     cout<<"The sorted array is"<<endl;
     BubbleSort(array,n);
+    cout<<endl;
     display(array,n);
     return 0;
 }
